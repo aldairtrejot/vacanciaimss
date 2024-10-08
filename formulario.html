@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario IMSS Bienestar</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Vincula el archivo CSS -->
+  </head>
+  <body>
+    <div class="container">
+      <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+      <h1>Sistema de Gestión de Vacantes Disponibles del IMSS BIENESTAR</h1>
+
+      <!-- Bloque para mostrar el mensaje de diálogo -->
+      <div id="dialog" class="dialog" style="display: none">
+        <p id="dialogMessage"></p>
+        <button id="dialogButton">Aceptar</button>
+      </div>
+
+      <div class="form-group">
+        <label for="emails">Usuario</label>
+        <input type="text" id="user_" placeholder="Usuario" />
+      </div>
+      <div class="form-group">
+        <label for="subject">Contraseña</label>
+        <input type="password" id="password_" placeholder="*****" />
+      </div>
+      <button onclick="ingresar()">Ingresar</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+      /*
+      $(function () {
+        console.log("ready!");
+      });*/
+
+      function ingresar() {
+        let user = document.getElementById("user_").value;
+        let password = document.getElementById("password_").value;
+
+        let userAdmin = "IMSS-BIENESTAR";
+        let passrodAdmin = "iMMssB13n3s";
+
+        if (user === "") {
+          messageError("Campo usuario no puede estar vacio");
+        } else if (password === "") {
+          messageError("Campo contraseña no puede estar vacio");
+        } else {
+          if (user == userAdmin && password == passrodAdmin) {
+            window.location.href = "home.php";
+          } else {
+            messageError("Usuario o contraseña incorrectos");
+          }
+        }
+
+        $("#user_").val("");
+        $("#password_").val("");
+      }
+
+      function messageError(text) {
+        const Toast = Swal.mixin({
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+          },
+        });
+        Toast.fire({
+          icon: "error",
+          title: text,
+        });
+      }
+    </script>
+  </body>
+</html>
