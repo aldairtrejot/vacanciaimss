@@ -35,7 +35,7 @@
 </head>
 
 <body>
-    <iframe title="Brechas" width="600" height="373.5"
+    <iframe title="Brechas" width="800" height="950"
         src="https://app.powerbi.com/view?r=eyJrIjoiNGMxNjM5ZTEtNWMwNi00MzdiLWIzNGQtY2E0ODhlYjU4OGEzIiwidCI6ImQxMzQ3MmY3LTVkMmQtNGU5NS1iNmIwLWZhNWE1ODhjODMyZCIsImMiOjR9"
         frameborder="0" allowFullScreen="true"></iframe>
 </body>
